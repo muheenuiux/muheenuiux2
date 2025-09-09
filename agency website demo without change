@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future Agency</title>
+  <style>
+    body {margin:0;font-family:'Poppins',sans-serif;background:#0a0a1a;color:#f5f5f5;}
+    h1,h2{text-align:center;color:#fff}
+    header{background:linear-gradient(135deg,#1a1a2e,#16213e);padding:2rem;text-align:center;}
+    .navbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+    .logo{font-weight:bold;font-size:1.2rem}
+    .nav-links{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
+    .nav-links a{color:#fff;text-decoration:none;transition:.3s}
+    .nav-links a:hover{color:#3edf75}
+    .hero{margin-top:2rem}
+    .btn{padding:.7rem 1.5rem;border:none;border-radius:30px;margin:.5rem;background:#3edf75;color:#0a0a1a;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+    .btn.secondary{background:transparent;border:1px solid #3edf75;color:#3edf75}
+    section{padding:4rem 2rem}
+    .grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+    .card,.member{background:#1a1a2e;padding:1.5rem;border-radius:12px;text-align:center;transition:.3s;cursor:pointer;color:#fff;text-decoration:none}
+    .card:hover,.member:hover{transform:translateY(-5px);box-shadow:0 0 15px #3edf75}
+    form{max-width:500px;margin:auto;display:flex;flex-direction:column;gap:1rem}
+    input,textarea{padding:.8rem;border-radius:8px;border:none}
+    button{padding:1rem;border:none;background:#3edf75;color:#0a0a1a;font-weight:bold;border-radius:8px;cursor:pointer}
+    footer{text-align:center;padding:2rem;background:#111}
+    .portfolio-items{display:none}
+    .portfolio-items.active{display:grid}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">⚡ Future Agency</div>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>We Design. We Build. We Create Futures.</h1>
+      <p>From design to development, VFX, 3D, and marketing — we shape ideas into reality.</p>
+      <a href="#contact" class="btn">Get a Quote</a>
+      <a href="#team" class="btn secondary">Meet the Team</a>
+    </div>
+  </header>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="grid">
+      <div class="card">🌐 Web Development</div>
+      <div class="card">🎨 UI/UX Design</div>
+      <div class="card">🔄 Web Redesign</div>
+      <div class="card">📈 Digital Marketing</div>
+      <div class="card">🎬 VFX & Editing</div>
+      <div class="card">🖌️ 3D Art & Animation</div>
+      <div class="card">🎮 Game Development</div>
+    </div>
+  </section>
+
+  <section id="team">
+    <h2>Meet Our Team</h2>
+    <div class="grid">
+      <div class="member" onclick="showPortfolio('uiux')">🎨 UI/UX Designer</div>
+      <div class="member" onclick="showPortfolio('tester')">🧪 Code Tester</div>
+      <div class="member" onclick="showPortfolio('editor')">✂️ Editor</div>
+      <div class="member" onclick="showPortfolio('marketing')">📈 Digital Marketer</div>
+      <div class="member" onclick="showPortfolio('vfx')">🎬 VFX Artist</div>
+      <div class="member" onclick="showPortfolio('artist3d')">🖌️ 3D Artist</div>
+      <div class="member" onclick="showPortfolio('gamedev')">🎮 Game Developer</div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <h2>Team Portfolios</h2>
+    <div id="uiux" class="portfolio-items grid">
+      <div class="card">Landing Page Design</div>
+      <div class="card">App Dashboard</div>
+    </div>
+    <div id="tester" class="portfolio-items grid">
+      <div class="card">Unit Testing Suite</div>
+      <div class="card">Bug Fix Reports</div>
+    </div>
+    <div id="editor" class="portfolio-items grid">
+      <div class="card">Short Film Edit</div>
+      <div class="card">Commercial Edit</div>
+    </div>
+    <div id="marketing" class="portfolio-items grid">
+      <div class="card">Ad Campaign</div>
+      <div class="card">SEO Optimization</div>
+    </div>
+    <div id="vfx" class="portfolio-items grid">
+      <div class="card">Movie VFX</div>
+      <div class="card">Product Animation</div>
+    </div>
+    <div id="artist3d" class="portfolio-items grid">
+      <div class="card">3D Character</div>
+      <div class="card">Environment Model</div>
+    </div>
+    <div id="gamedev" class="portfolio-items grid">
+      <div class="card">Mobile Game</div>
+      <div class="card">VR Experience</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Future Agency. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function showPortfolio(id){
+      document.querySelectorAll('.portfolio-items').forEach(el=>el.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      document.getElementById('portfolio').scrollIntoView({behavior:'smooth'});
+    }
+  </script>
+</body>
+</html>
